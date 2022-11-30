@@ -35,7 +35,7 @@ public class WikipediaLanguageTests {
     }
 
     @MethodSource
-    @ParameterizedTest(name = "Проверка наличия кнопок навигации {1} на сайте Wikipedia в локале {0}")
+    @ParameterizedTest(name = "Checking for Navigation Buttons {1} on the Wikipedia site in local {0}")
     void wikipediaLanguageButtonsTest(String locale, List<String> buttons){
         $$(".central-featured .central-featured-lang a").find(text(locale)).click();
         $$("#p-navigation a").filter(visible).shouldHave(texts(buttons));
